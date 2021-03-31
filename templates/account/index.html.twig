@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon espace d'administration{% endblock %}
+
+{% block body %}
+    <h1>Mon espace d'administration</h1>
+    <p>Bienvenue {{app.user.firstname}} dans votre espace d'administration.</p>
+    <hr>
+    <a href="{{path('account_password')}}">Modifier votre mot de passe</a><br>
+    <a href="{{ path('register') }}">Créer un administrateur</a><br>
+    <a href="{{ path('admin') }}">Back office</a>
+    
+{% endblock %}

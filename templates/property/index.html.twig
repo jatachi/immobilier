@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Propriètées - Schama immobilier{% endblock %}
+
+{% block body %}
+    {{ form(form) }}
+    <h1>Nos Biens</h1>
+    <div class="row">
+        {% for property in properties %}
+            <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ path('property',{'slug':property.slug})}}"><img src="/uploads/{{ property.illustration }}" alt="{{ property.name }}" class="card-img-top"></a>
+                        <div class="card-body">
+                            <div class="property-item text-align">
+                                <h5 class="card-title">{{ property.name }}</h5>
+                                <p class="card-text">{{ property.proximite }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %}
+{% endblock %}
+
+{% block body %}
+      
+    <!-- Three columns of text below the carousel -->
+        <section class="mb-3">
+            <h3>Qui sommes nous </h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/uploads/{{ image.illustration }}" alt="schama immobilier" class="w-75">
+                </div>
+                <div class="col-md-6">
+                    <p>est une entreprise fondée par 2 sœurs. Après avoir complété leur études d’ingénieur 
+                    aux Etats-Unis et travaillé plusieurs années dans leur domaine respectif, 
+                    elles sont amenées à gérer le patrimoine foncier familial et, 
+                    se découvrant une passion, décident de s’étendre. 
+                    Suite à une formation continue à ESPI (Ecole Supérieure des Professions Immobilières), 
+                    elles ouvrent leur agence à Abidjan.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr class="featurette-divider">
+         <h3>A la une</h3>
+        <p>Découvrez nos meilleures proprietés</p>
+        <div class="row mb-3">
+            {% for property in properties %}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ path('property',{'slug':property.slug})}}"><img src="/uploads/{{ property.illustration }}" alt="{{ property.name }}" class="card-img-top"></a>
+                        <div class="card-body">
+                            <div class="property-item text-align">
+                                <h5 class="card-title">{{ property.name }}</h5>
+                                <p class="card-text">{{ property.proximite }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <hr class="featurette-divider">
+        <section>
+            <h3>Biens par catégories </h3>
+            <p>Découvrez nos bien en fonction des catégories</p>
+            <div class="row mb-2"> 
+                {% for category in categories %}
+                <div class="col-md-6">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col-6 p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0">{{ category.name }}</h3>
+                            <p class="card-text mb-auto">{{ category.description }}.</p>
+                            <a href="{{ path('category',{'id':category.id}) }}" class="stretched-link"></a>
+                        </div>
+                        <div class="col-6 d-none d-lg-block">
+                            <img src="/uploads/{{ category.illustration }}" alt="{{ category.name }}" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </section>
+        <hr class="featurette-divider">
+        <!-- /END THE FEATURETTES -->
+    
+{% endblock %}
