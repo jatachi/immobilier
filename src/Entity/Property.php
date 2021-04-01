@@ -77,6 +77,11 @@ class Property
      */
     private $attachements;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $issale;
+
     public function __construct()
     {
         $this->attachements = new ArrayCollection();
@@ -233,6 +238,18 @@ class Property
                 $attachement->setProperty(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIssale(): ?bool
+    {
+        return $this->issale;
+    }
+
+    public function setIssale(?bool $issale): self
+    {
+        $this->issale = $issale;
 
         return $this;
     }

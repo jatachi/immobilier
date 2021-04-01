@@ -45,6 +45,7 @@ class PropertyCrudController extends AbstractCrudController
                 ->onlyOnDetail(),
             BooleanField::new('isbest'),
             BooleanField::new('isavaible'),
+            BooleanField::new('issale'),
             AssociationField::new('typeproperty')
             
         ];
