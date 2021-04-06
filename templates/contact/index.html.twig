@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+    <style>
+        *
+        {
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+         
+       .contacte{
+           position: relative;
+           min-height: 100vh;
+           padding: 50px 100px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+       }
+       .contacte .content{
+           max-width: 800px;
+           text-align: center;
+
+       }
+       .contacte .content h2{
+          font-size: 36px;
+          font-weight: 500;
+          color: red;
+           
+       }
+       .contacte .content p{
+          font-weight: 300;
+       }
+        .container{
+           width: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin-top: 30px;
+       }
+       .container .contactInfo{
+           width: 50%;
+           display: flex;
+           flex-direction: column;
+       }
+       .container .contactInfo .box{
+           position: relative;
+           padding: 20px 0;
+           display: flex;
+       }
+       .container .contactInfo .box .icon{
+           min-width: 60px;
+           height: 60px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           border-radius: 50%;
+           font-size: 22px;
+           background: red;
+       }
+         .container .contactInfo .box .text{
+           display: flex;
+           margin-left: 20px;
+           font-size: 16px;
+           flex-direction: column;
+           font-weight: 300;
+       }
+
+       .container .contactInfo .box .text h3{
+           font-weight: 500;
+       }
+    </style>
+    <section class="contacte">
+        <div class="content">
+            <h2>Contactez nous</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, minus ratione inventore a fugiat magni at iusto distinctio, neque ipsam debitis nemo amet impedit quis placeat. Blanditiis possimus quam iure?</p>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fas fa-map-signs"></i></div>
+                    <div class="text">
+                        <h3>Adresse</h3>
+                        <p>Riviera Palmeraie à l'entrée de la Rue Ministre en face de la station Pretroleum</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fas fa-envelope-square"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>info@schamaassur.comOpens in your application</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fas fa-phone"></i></div>
+                    <div class="text">
+                        <h3>Téléphone</h3>
+                        <p>+225 59 16 68 68</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+{% endblock %}
